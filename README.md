@@ -4,11 +4,10 @@ Um pipeline dinâmico de extração de dados desenvolvido em Python, projetado p
 
 ## Visão Geral Técnica
 
-A versão atual do sistema foca em estabilidade e resiliência na raspagem de dados. Em vez de depender de classes CSS voláteis (frequentemente alteradas por frameworks de frontend), o motor de busca mapeia atributos semânticos do DOM, garantindo alta disponibilidade da extração.
-
+A versão atual do sistema foca em estabilidade, resiliência na raspagem de dados e filtragem de oportunidades em tempo de execução. O motor de busca mapeia atributos semânticos do DOM (`data-parameter`) e extrai links absolutos manipulando as propriedades nativas das tags HTML (`href`).
 Principais características arquiteturais desta fase:
 * **Roteamento Dinâmico de Requisições:** Construção em tempo de execução das URLs alvo com base em parâmetros de entrada (marca e modelo).
-* **Tolerância a Falhas na Extração:** Implementação de validação rigorosa de dados nulos (null-safety) utilizando operadores ternários, prevenindo interrupções de execução (runtime exceptions) causadas por anomalias ou dados ausentes na árvore do DOM.
+* **Sistema de Thresholds (Gatilhos):** Implementação de limites paramétricos de preço e quilometragem definidos pelo usuário, utilizando avaliação de curto-circuito (short-circuit evaluation) para descartar dados fora do escopo antes do processamento.
 * **Bypass de Proteção HTTP:** Mascaramento de requisições através da injeção de `Headers` e `User-Agent` específicos, mitigando bloqueios primários no servidor de origem (evasão de erros 403/429).
 
 ## Stack Tecnológica
