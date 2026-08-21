@@ -12,6 +12,6 @@ Principais características arquiteturais desta fase:
 
 ## Stack Tecnológica
 
-* **Python 3.x**
+* **Python**
 * **BeautifulSoup4** (Parsing e navegação no DOM)
 * **Requests** (Comunicação de rede e manipulação do protocolo HTTP)
