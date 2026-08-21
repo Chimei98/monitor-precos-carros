@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 
+# Banco de dados
+*.db
+
 # Ambientes virtuais
 venv/
 env/
