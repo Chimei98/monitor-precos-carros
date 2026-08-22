@@ -20,8 +20,23 @@ pd.set_option('display.width', 1000)
 # Leitura e Manipulação de dados
 df_carros = df_carros.dropna(subset=['link', 'preco']) # remoção de dados corrompidos
 
-# Exibição de dados => 5 dados
-print('-'*100)
-print("DADOS DA TABELA 'CARROS' ")
-print(df_carros.head())
+
+# Exibição de dados
+print(df_carros) # Dataframe original
+print('-'*200)
+
+df_carros_preco_menor = df_carros.sort_values(by="preco", ascending=True) # Dataframe dos carros mais baratos
+print(df_carros_preco_menor.head())
+print('-'*200)
+
+df_carros_preco_maior = df_carros.sort_values(by="preco", ascending=False) # Dataframe dos carros mais caros
+print(df_carros_preco_maior.head())
+
+df_carros_dados = df_carros.describe() # Dataframe das estatísticas de cada carro
+print('-'*200)
+print("DADOS ESTATÍSTICOS")
+print(df_carros_dados)
+
+
+
 
