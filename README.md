@@ -1,7 +1,6 @@
 # Automotive Market Data Extractor
 
 Um pipeline dinâmico de extração de dados desenvolvido em Python, projetado para capturar, estruturar e validar informações de classificados automotivos. Este projeto atua como o módulo de ingestão de dados fundamental para um futuro sistema de análise preditiva de preços.
-
 ## Visão Geral Técnica
 
 A versão atual do sistema foca em estabilidade, resiliência na raspagem de dados e filtragem de oportunidades em tempo de execução. O motor de busca mapeia atributos semânticos do DOM (`data-parameter`) e extrai links absolutos manipulando as propriedades nativas das tags HTML (`href`).
@@ -15,3 +14,5 @@ Principais características arquiteturais desta fase:
 * **Python**
 * **BeautifulSoup4** (Parsing e navegação no DOM)
 * **Requests** (Comunicação de rede e manipulação do protocolo HTTP)
+* **SQLAlchemy** (Object-Relational Mapping para a modelagem de dados)
+* **SQLite3** (Motor de banco de dados leve para desenvolvimento local)
