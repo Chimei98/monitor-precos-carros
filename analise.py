@@ -22,21 +22,29 @@ df_carros = df_carros.dropna(subset=['link', 'preco']) # remoção de dados corr
 
 
 # Exibição de dados
+print("DADOS GERAIS")
 print(df_carros) # Dataframe original
-print('-'*200)
+print('-'*100)
 
 df_carros_preco_menor = df_carros.sort_values(by="preco", ascending=True) # Dataframe dos carros mais baratos
+print("DADOS CARROS MAIS BARATOS")
 print(df_carros_preco_menor.head())
-print('-'*200)
+print('-'*100)
 
 df_carros_preco_maior = df_carros.sort_values(by="preco", ascending=False) # Dataframe dos carros mais caros
+print("DADOS CARROS MAIS CAROS")
 print(df_carros_preco_maior.head())
 
 df_carros_dados = df_carros.describe() # Dataframe das estatísticas de cada carro
-print('-'*200)
+print('-'*100)
 print("DADOS ESTATÍSTICOS")
 print(df_carros_dados)
 
+# Agrupamento de dados com base no tipo de combustível
+print('-'*100)
+fuelgroup_data = df_carros.groupby("combustivel")['preco'].mean() # Agrupamento da
+print("DADOS AGRUPADOS")
+print(fuelgroup_data)
 
 
 
