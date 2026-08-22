@@ -17,6 +17,9 @@ conexao.close()
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', 1000)
 
+# Leitura e Manipulação de dados
+df_carros = df_carros.dropna(subset=['link', 'preco']) # remoção de dados corrompidos
+
 # Exibição de dados => 5 dados
 print('-'*100)
 print("DADOS DA TABELA 'CARROS' ")
