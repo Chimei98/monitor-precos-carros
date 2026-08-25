@@ -3,6 +3,7 @@ import sqlite3
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+import joblib
 
 print("[PANDAS] Conectando ao banco de dados...")
 print("[PANDAS] Version: " + pd.__version__)
@@ -57,7 +58,7 @@ print(df_binario.head())
 
 # Matrizes de isolamento para análise preditiva de preço
 print('-'*100)
-df_x = df_binario.drop(columns=['nome','preco','link']) # variável de entrada
+df_x = df_binario.drop(columns=['id','nome','preco','link']) # variável de entrada
 s_y = df_binario['preco'] # variável pretendida
 print("DADOS SUPRIMIDOS")
 print(df_x)
@@ -87,5 +88,7 @@ print("-"*100)
 print("Margem de erro de modelo:")
 print(f"    Aproximadamente: {erro} euros") # mais ou menos {erro} euros de diferença.
 
+# Serialização de Modelo
+joblib.dump(modelo, 'modelo_preco.pkl')
 
 
