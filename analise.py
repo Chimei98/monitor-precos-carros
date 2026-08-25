@@ -42,9 +42,13 @@ print(df_carros_dados)
 
 # Agrupamento de dados com base no tipo de combustível
 print('-'*100)
-fuelgroup_data = df_carros.groupby("combustivel")['preco'].mean() # Agrupamento da
+fuelgroup_data = df_carros.groupby("combustivel")['preco'].mean() # Agrupamento da média de preços com base no tipo de combustível
 print("DADOS AGRUPADOS")
 print(fuelgroup_data)
 
-
+# Transformação de coluna "combustivel" para indicadores binários para análise
+print('-'*100)
+df_binario = pd.get_dummies(df_carros, columns=['combustivel'], dtype=int)
+print("DADOS EM BINÁRIO")
+print(df_binario.head())
 
