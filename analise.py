@@ -1,5 +1,7 @@
 import pandas as pd
 import sqlite3
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
 
 print("[PANDAS] Conectando ao banco de dados...")
 print("[PANDAS] Version: " + pd.__version__)
@@ -52,3 +54,11 @@ df_binario = pd.get_dummies(df_carros, columns=['combustivel'], dtype=int)
 print("DADOS EM BINÁRIO")
 print(df_binario.head())
 
+# Matrizes de isolamento para análise preditiva de preço
+print('-'*100)
+df_x = df_binario.drop(columns=['preco','link']) # variável de entrada
+df_y = df_binario['preco'] # variável pretendida
+print("DADOS SUPRIMIDOS")
+print(df_x)
+print('#'*100)
+print(df_y)
