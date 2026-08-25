@@ -5,6 +5,10 @@ __pycache__/
 # Banco de dados
 *.db
 
+# modelos
+*.pkl
+*.joblib
+
 # Ambientes virtuais
 venv/
 env/
