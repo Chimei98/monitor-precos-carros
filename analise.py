@@ -55,6 +55,20 @@ print('-'*100)
 df_binario = pd.get_dummies(df_carros, columns=['combustivel','caixa'], dtype=int)
 print("DADOS EM BINÁRIO")
 print(df_binario.head())
+print('-'*100)
+print(f"Tamanho de DF = {len(df_binario)}")
+
+# Interquartis para prevenção de preços irreais
+q1 = df_binario['preco'].quantile(0.25)
+q3 = df_binario['preco'].quantile(0.75)
+iqr = q3 - q1 # amplitude interquartil
+lim_inf = q1 - (1.5 * iqr)
+lim_sup = q3 + (1.5 * iqr)
+
+df_binario = df_binario[(df_binario['preco'] >= lim_inf) & (df_binario['preco'] <= lim_sup)]
+print('-'*100)
+print(f"Tamanho de DF repartido = {len(df_binario)}")
+
 
 # Matrizes de isolamento para análise preditiva de preço
 print('-'*100)
