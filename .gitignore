@@ -1,6 +1,7 @@
 # Cache e compilados do Python
 __pycache__/
 *.py[cod]
+*.idea
 
 # Banco de dados
 *.db

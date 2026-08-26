@@ -1,2 +1,6 @@
 requests
 beautifulsoup4
+sqlalchemy
+pandas
+scikit-learn
+joblib
